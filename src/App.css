@@ -1,17 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Nunito:wght@400;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+@import url('https://fonts.cdnfonts.com/css/bicubik');
 
 :root {
-  --primary-blue: #4FB3D9;
-  --light-blue: #87CEEB;
-  --bright-green: #00C851;
-  --mint-green: #2DCCA7;
-  --dark-green: #1B998B;
-  --soft-blue: #A8E6CF;
+  --primary-red: #c72130;
+  --light-red: #e74c3c;
+  --dark-red: #a91b28;
+  --soft-red: #f8d7da;
+  --accent-red: #dc3545;
   --white: #FFFFFF;
   --light-gray: #F8F9FA;
   --dark-text: #2C3E50;
   --shadow-color: rgba(0, 0, 0, 0.15);
-  --accent-color: #FF6B35;
+  --accent-color: #c72130;
 }
 
 * {
@@ -21,9 +22,12 @@
 }
 
 body {
-  font-family: 'Fredoka', sans-serif;
-  background: linear-gradient(135deg, var(--light-blue) 0%, var(--soft-blue) 100%);
-  color: var(--dark-text);
+  font-family: 'Bicubik', sans-serif;
+  background-image: url('/image_2025-07-17_23-43-35.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: var(--white);
   overflow-x: hidden;
   margin: 0;
   padding: 0;
@@ -31,8 +35,19 @@ body {
 
 .app {
   min-height: 100vh;
+  width: 100vw;
   position: relative;
-  background: linear-gradient(135deg, var(--light-blue) 0%, var(--mint-green) 50%, var(--soft-blue) 100%);
+  background: white;
+  margin: 0 auto;
+  box-shadow: 0 0 30px var(--shadow-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.background {
+  width: 70vw;
+  margin: 0 auto;
 }
 
 /* Game-style animated background */
@@ -51,11 +66,6 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-image: 
-    radial-gradient(circle at 20% 30%, var(--bright-green) 2px, transparent 2px),
-    radial-gradient(circle at 70% 10%, var(--primary-blue) 1px, transparent 1px),
-    radial-gradient(circle at 40% 70%, var(--mint-green) 1.5px, transparent 1.5px),
-    radial-gradient(circle at 90% 60%, var(--bright-green) 1px, transparent 1px);
   background-size: 200px 200px, 150px 150px, 180px 180px, 220px 220px;
   animation: floatClouds 15s linear infinite;
 }
@@ -75,10 +85,6 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-image: 
-    radial-gradient(circle at 10% 20%, rgba(79, 179, 217, 0.8) 1px, transparent 1px),
-    radial-gradient(circle at 80% 80%, rgba(0, 200, 81, 0.6) 1px, transparent 1px),
-    radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.4) 1px, transparent 1px);
   background-size: 100px 100px, 150px 150px, 200px 200px;
   animation: sparkle 3s ease-in-out infinite;
 }
@@ -99,8 +105,8 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 20px 40px;
-  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-green) 100%);
-  border-bottom: 4px solid var(--bright-green);
+  background: linear-gradient(135deg, var(--primary-red) 0%, var(--dark-red) 100%);
+  border-bottom: 4px solid var(--accent-red);
   box-shadow: 0 4px 20px var(--shadow-color);
   position: relative;
 }
@@ -112,12 +118,7 @@ body {
   left: 0;
   right: 0;
   height: 6px;
-  background: linear-gradient(90deg, 
-    var(--bright-green) 0%, 
-    var(--mint-green) 25%, 
-    var(--primary-blue) 50%, 
-    var(--light-blue) 75%, 
-    var(--soft-blue) 100%);
+  background: linear-gradient(90deg, var(--primary-red) 0%, var(--light-red) 100%);
 }
 
 .logo-container {
@@ -127,26 +128,30 @@ body {
 }
 
 .main-logo {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  border: 4px solid var(--white);
-  box-shadow: 0 6px 20px var(--shadow-color);
-  animation: bounce 2s ease-in-out infinite;
+  display: block;
+  width: 350px;
+  height: 200px;
+  margin: 40px auto;
+  border-radius: 20px;
+  border: 4px solid var(--primary-red);
+  box-shadow: 0 8px 25px var(--shadow-color);
+  transition: transform 0.3s ease;
+  object-fit: cover;
 }
 
-@keyframes bounce {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-8px); }
+.main-logo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 35px var(--shadow-color);
 }
 
 .title {
-  font-family: 'Fredoka', sans-serif;
-  font-weight: 700;
+  font-family: 'Bicubik', 'Orbitron', monospace;
+  font-weight: 900;
   font-size: 2rem;
   color: var(--white);
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  letter-spacing: 3px;
+  text-transform: uppercase;
 }
 
 .header-subtitle {
@@ -162,21 +167,21 @@ body {
 }
 
 .download-title {
-  font-family: 'Fredoka', sans-serif;
+  font-family: 'Bicubik', 'Orbitron', monospace;
   font-weight: 700;
   font-size: 2.5rem;
   text-align: center;
   margin-bottom: 10px;
-  color: var(--game-blue);
-  text-shadow: 3px 3px 0px var(--black);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
 .download-subtitle {
   text-align: center;
   font-size: 1.2rem;
   margin-bottom: 30px;
-  color: var(--black);
+  color: var(--dark-text);
   font-weight: 600;
 }
 
@@ -195,11 +200,11 @@ body {
   gap: 20px;
   padding: 25px 30px;
   background: var(--white);
-  border: 4px solid var(--game-green);
+  border: 4px solid var(--primary-red);
   border-radius: 20px;
   cursor: pointer;
   transition: all 0.3s ease;
-  color: var(--black);
+  color: var(--dark-text);
   font-family: 'Fredoka', sans-serif;
   text-decoration: none;
   overflow: hidden;
@@ -210,39 +215,39 @@ body {
 .download-btn:hover {
   transform: translateY(-8px);
   box-shadow: 0 12px 24px var(--shadow-color);
-  border-color: var(--game-yellow);
+  border-color: var(--dark-red);
 }
 
 .download-btn.selected {
-  border-color: var(--game-red);
-  box-shadow: 0 0 0 4px var(--game-red);
+  border-color: var(--accent-red);
+  box-shadow: 0 0 0 4px var(--accent-red);
 }
 
 .download-btn.windows {
-  border-color: var(--game-blue);
+  border-color: var(--primary-red);
 }
 
 .download-btn.windows:hover {
-  border-color: var(--game-purple);
-  background: linear-gradient(135deg, var(--white) 0%, #E6F3FF 100%);
+  border-color: var(--dark-red);
+  background: linear-gradient(135deg, var(--white) 0%, var(--soft-red) 100%);
 }
 
 .download-btn.macos {
-  border-color: var(--road-gray);
+  border-color: var(--dark-text);
 }
 
 .download-btn.macos:hover {
-  border-color: var(--black);
-  background: linear-gradient(135deg, var(--white) 0%, #F0F0F0 100%);
+  border-color: var(--primary-red);
+  background: linear-gradient(135deg, var(--white) 0%, var(--soft-red) 100%);
 }
 
 .download-btn.linux {
-  border-color: var(--orange);
+  border-color: var(--accent-red);
 }
 
 .download-btn.linux:hover {
-  border-color: var(--game-red);
-  background: linear-gradient(135deg, var(--white) 0%, #FFF3E0 100%);
+  border-color: var(--light-red);
+  background: linear-gradient(135deg, var(--white) 0%, var(--soft-red) 100%);
 }
 
 .platform-icon {
@@ -275,7 +280,7 @@ body {
 
 .platform-details {
   font-size: 1rem;
-  color: var(--road-gray);
+  color: var(--dark-text);
   font-weight: 600;
 }
 
@@ -301,11 +306,11 @@ body {
   right: 20px;
   font-size: 0.9rem;
   font-weight: 700;
-  color: var(--game-red);
-  background: var(--game-yellow);
+  color: var(--white);
+  background: var(--primary-red);
   padding: 4px 8px;
   border-radius: 8px;
-  border: 2px solid var(--black);
+  border: 2px solid var(--dark-red);
   opacity: 0;
   transition: opacity 0.3s ease;
   text-shadow: none;
@@ -328,13 +333,13 @@ body {
 
 .neon-box {
   background: rgba(255, 255, 255, 0.95);
-  border: 3px solid var(--bright-green);
+  border: 3px solid var(--primary-red);
   border-radius: 20px;
   padding: 30px;
   box-shadow: 
     0 10px 30px var(--shadow-color),
     inset 0 0 0 2px var(--white),
-    0 0 20px rgba(0, 200, 81, 0.3);
+    0 0 20px rgba(199, 33, 48, 0.3);
   position: relative;
   overflow: hidden;
   backdrop-filter: blur(10px);
@@ -347,31 +352,20 @@ body {
   left: -3px;
   right: -3px;
   bottom: -3px;
-  background: linear-gradient(45deg, 
-    var(--bright-green), 
-    var(--mint-green), 
-    var(--primary-blue), 
-    var(--light-blue), 
-    var(--soft-blue));
+  background: linear-gradient(45deg, var(--primary-red), var(--light-red));
   z-index: -1;
   border-radius: 23px;
-  animation: colorRotate 6s linear infinite;
-}
-
-@keyframes colorRotate {
-  0% { filter: hue-rotate(0deg); }
-  100% { filter: hue-rotate(360deg); }
 }
 
 .story-title {
-  font-family: 'Fredoka', sans-serif;
+  font-family: 'Bicubik', 'Orbitron', monospace;
   font-weight: 700;
   font-size: 2.5rem;
   text-align: center;
   margin-bottom: 20px;
-  color: var(--game-red);
-  text-shadow: 3px 3px 0px var(--black);
-  letter-spacing: 1px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
 .story-text p {
@@ -383,13 +377,13 @@ body {
 }
 
 .money {
-  color: var(--game-yellow);
+  color: var(--white);
   font-weight: 800;
-  text-shadow: 2px 2px 0px var(--black);
-  background: var(--game-red);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  background: var(--primary-red);
   padding: 2px 8px;
   border-radius: 8px;
-  border: 2px solid var(--black);
+  border: 2px solid var(--dark-red);
 }
 
 /* Game Section */
@@ -631,12 +625,12 @@ body {
 .footer {
   text-align: center;
   padding: 20px;
-  background: var(--game-purple);
-  border-top: 4px solid var(--black);
+  background: var(--primary-red);
+  border-top: 4px solid var(--dark-red);
   font-family: 'Fredoka', sans-serif;
   color: var(--white);
   font-weight: 600;
-  text-shadow: 2px 2px 0px var(--black);
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5);
   box-shadow: 0 -4px 8px var(--shadow-color);
 }
 
