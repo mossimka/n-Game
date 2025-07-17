@@ -51,6 +51,7 @@ function App() {
           <RotatingModel top="200" left="1100" modelName="bakha"/>
           <RotatingModel top="700" left="1200" modelName="tamer"/>
           <RotatingModel top="700" left="200" modelName="shoq"/>
+          <RotatingModel top="600" left="700" modelName="igor"/>
           {/* <RotatingModel /> --- IGNORE --- */}
 
           {/* СЕКЦИЯ СКАЧИВАНИЯ */}
