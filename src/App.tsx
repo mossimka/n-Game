@@ -8,13 +8,16 @@ function App() {
   const downloadGame = (platform: string) => {
     setSelectedPlatform(platform)
     const downloadLinks = {
-      windows: '#download-windows',
+      windows: 'https://drive.google.com/uc?export=download&id=1sGTJ2zuD0RLStKzZ1vNg6IY1Cz5sdd5z',
       macos: '#download-macos',
       linux: '#download-linux'
     }
-    console.log(`Скачивание для ${platform}:`, downloadLinks[platform as keyof typeof downloadLinks])
-    alert(`Скачивание для ${platform} начнется в ближайшее время!`)
+  
+    const link = downloadLinks[platform as keyof typeof downloadLinks]
+    console.log(`Скачивание для ${platform}:`, link)
+    window.open(link, '_blank')
   }
+
 
   return (
     <div className="app">
